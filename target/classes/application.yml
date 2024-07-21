@@ -1,0 +1,46 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;databaseName=shopquanao;encrypt=true;trustServerCertificate=true;
+    username: sa
+    password: 123456
+  devtools:
+    livereload:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.SQLServerDialect
+    open-in-view: true
+    show-sql: false
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: dangtran09102001@gmail.com
+    password: drydqssinbkzpjsr
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  profiles:
+    active: dev
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: 1050501362620628
+            client-secret: 225bb03830263921ae15aa7a1647a0d6
+          google:
+            client-id: 14152977969-lqid1rgojd63njtsd6sg6sv4iftjo8u5.apps.googleusercontent.com
+            client-secret: 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
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 50MB
